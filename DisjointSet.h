@@ -45,6 +45,8 @@ public:
       DisjointSet *y_rep;
       x_rep = DisjointSet::find_set(x);
       y_rep = DisjointSet::find_set(y);
+      if(x_rep == y_rep)
+        return;
       if (x_rep->get_rank() > y_rep->get_rank())
         y_rep->set_representative(x_rep);
       else
